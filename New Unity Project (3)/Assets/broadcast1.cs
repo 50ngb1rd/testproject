@@ -20,6 +20,7 @@ public class broadcast1 : MonoBehaviour
     public TextMeshProUGUI rec1;
     public TextMeshProUGUI rec2;
     public TextMeshProUGUI control;
+    public TextMeshProUGUI lookup;
     public GameObject line1;
     public GameObject line2;
     public GameObject line3;
@@ -36,6 +37,7 @@ public class broadcast1 : MonoBehaviour
     public GameObject disbox;
     public GameObject recbox;
     public GameObject rec2box;
+    public GameObject lookupbox;
 
 
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class broadcast1 : MonoBehaviour
         dis1.enabled = false;
         rec1.enabled = false;
         rec2.enabled = false;
+        lookup.enabled = false;
         foundbox1.GetComponent<Renderer>().enabled = false;
         ipbox2.GetComponent<Renderer>().enabled = false;
         mdropbox3.GetComponent<Renderer>().enabled = false;
@@ -63,6 +66,7 @@ public class broadcast1 : MonoBehaviour
         disbox.GetComponent<Renderer>().enabled = false;
         recbox.GetComponent<Renderer>().enabled = false;
         rec2box.GetComponent<Renderer>().enabled = false;
+        lookupbox.GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -98,6 +102,8 @@ public class broadcast1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
     }
 
     public void broadcastClick()
@@ -132,20 +138,31 @@ public class broadcast1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
 
+        if (control.enabled == false)
+        {
+            if (title1.enabled == false && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
+            {
+                title1.enabled = true;
+                errortext.enabled = false;
+                lookup.enabled = true;
+                lookupbox.GetComponent<Renderer>().enabled = true;
+                StartCoroutine(step1());
+            }
+            else if (title1.enabled == false && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == true)
+            {
+            }
+            else
+            {
+                errortext.enabled = true;
+            }
+        }
 
-        if (title1.enabled == false && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
-        {
-            title1.enabled = true;
-            errortext.enabled = false;
-            StartCoroutine(step1());
-        }
-        else if (title1.enabled == false && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == true)
-        {
-        }
         else
         {
-            errortext.enabled = true;
+
         }
     }
 
@@ -184,5 +201,7 @@ public class broadcast1 : MonoBehaviour
         mdrop.enabled = true;
         mdropbox3.GetComponent<Renderer>().enabled = true;
         control.enabled = false;
+        lookup.enabled = false;
+        lookupbox.GetComponent<Renderer>().enabled = false;
     }
 }

@@ -20,6 +20,7 @@ public class offer1 : MonoBehaviour
     public TextMeshProUGUI rec1;
     public TextMeshProUGUI rec2;
     public TextMeshProUGUI control;
+    public TextMeshProUGUI lookup;
     public GameObject line1;
     public GameObject line2;
     public GameObject line3;
@@ -36,6 +37,7 @@ public class offer1 : MonoBehaviour
     public GameObject disbox;
     public GameObject recbox;
     public GameObject rec2box;
+    public GameObject lookupbox;
 
 
     // Start is called before the first frame update
@@ -76,6 +78,8 @@ public class offer1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
     }
 
     public void offerClick()
@@ -110,26 +114,34 @@ public class offer1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
 
-        if (title1.enabled == true && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
+        if (control.enabled == false)
         {
-            title1.enabled = false;
-            title2.enabled = true;
-            errortext.enabled = false;
-            found1.enabled = false;
-            foundbox1.GetComponent<Renderer>().enabled = false;
-            mdrop.enabled = false;
-            mdropbox3.GetComponent<Renderer>().enabled = false;
-            StartCoroutine(step2());
+            if (title1.enabled == true && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
+            {
+                title1.enabled = false;
+                title2.enabled = true;
+                errortext.enabled = false;
+                found1.enabled = false;
+                foundbox1.GetComponent<Renderer>().enabled = false;
+                mdrop.enabled = false;
+                mdropbox3.GetComponent<Renderer>().enabled = false;
+                lookup.enabled = true;
+                lookupbox.GetComponent<Renderer>().enabled = true;
+                StartCoroutine(step2());
+            }
+            else if (title1.enabled == true && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == true)
+            {
+
+            }
+            else
+            {
+                errortext.enabled = true;
+            }
         }
-        else if (title1.enabled == true && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == true)
-        {
-           
-        }
-        else
-        {
-            errortext.enabled = true;
-        }
+        else { }
     }
 
     IEnumerator step2()
@@ -166,5 +178,7 @@ public class offer1 : MonoBehaviour
         rec1.enabled = true;
         recbox.GetComponent<Renderer>().enabled = true;
         control.enabled = false;
+        lookup.enabled = false;
+        lookupbox.GetComponent<Renderer>().enabled = false;
     }
 }

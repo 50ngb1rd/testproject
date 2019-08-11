@@ -18,7 +18,8 @@ public class acknowledge1 : MonoBehaviour
     public TextMeshProUGUI dis1;
     public TextMeshProUGUI rec1;
     public TextMeshProUGUI rec2;
-	public TextMeshProUGUI control;
+    public TextMeshProUGUI control;
+    public TextMeshProUGUI lookup;
     public GameObject line1;
     public GameObject line2;
     public GameObject line3;
@@ -35,6 +36,7 @@ public class acknowledge1 : MonoBehaviour
     public GameObject disbox;
     public GameObject recbox;
     public GameObject rec2box;
+    public GameObject lookupbox;
 
 
     // Start is called before the first frame update
@@ -75,12 +77,14 @@ public class acknowledge1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
     }
 
     public void ackClick()
     {
-		control.GetComponent<TextMeshProUGUI>();
-		errortext.GetComponent<TextMeshProUGUI>();
+        control.GetComponent<TextMeshProUGUI>();
+        errortext.GetComponent<TextMeshProUGUI>();
         title1.GetComponent<TextMeshProUGUI>();
         title2.GetComponent<TextMeshProUGUI>();
         title3.GetComponent<TextMeshProUGUI>();
@@ -109,26 +113,33 @@ public class acknowledge1 : MonoBehaviour
         disbox.GetComponent<GameObject>();
         recbox.GetComponent<GameObject>();
         rec2box.GetComponent<GameObject>();
+        lookup.GetComponent<TextMeshProUGUI>();
+        lookupbox.GetComponent<GameObject>();
 
-        if (title1.enabled == false && title2.enabled == false && title3.enabled == true && title4.enabled == false && control.enabled == false)
+        if (control.enabled == false)
         {
-            title3.enabled = false;
-            title4.enabled = true;
-            errortext.enabled = false;
-            mdrop.enabled = false;
-            mdropbox3.GetComponent<Renderer>().enabled = false;
-            rec2.enabled = false;
-            rec2box.GetComponent<Renderer>().enabled = false;
-            StartCoroutine(step4());
-        }
-		else if (title1.enabled == false && title2.enabled == false && title3.enabled == true && title4.enabled == false && control.enabled == true)
-		{
-		
-		}
-		else
-        {
-            errortext.enabled = true;
-        }
+            if (title1.enabled == false && title2.enabled == false && title3.enabled == true && title4.enabled == false && control.enabled == false)
+            {
+                title3.enabled = false;
+                title4.enabled = true;
+                errortext.enabled = false;
+                mdrop.enabled = false;
+                mdropbox3.GetComponent<Renderer>().enabled = false;
+                rec2.enabled = false;
+                rec2box.GetComponent<Renderer>().enabled = false;
+                lookup.enabled = true;
+                lookupbox.GetComponent<Renderer>().enabled = true;
+                StartCoroutine(step4());
+            }
+            else if (title1.enabled == false && title2.enabled == false && title3.enabled == true && title4.enabled == false && control.enabled == true)
+            {
+
+            }
+            else
+            {
+                errortext.enabled = true;
+            }
+        } else { }
     }
 
     IEnumerator step4()
@@ -165,5 +176,7 @@ public class acknowledge1 : MonoBehaviour
         rec1.enabled = true;
         recbox.GetComponent<Renderer>().enabled = true;
 		control.enabled = false;
+        lookup.enabled = false;
+        lookupbox.GetComponent<Renderer>().enabled = false;
     }
 }
