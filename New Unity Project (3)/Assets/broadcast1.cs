@@ -12,7 +12,7 @@ public class broadcast1 : MonoBehaviour
     public TextMeshProUGUI title3;
     public TextMeshProUGUI title4;
     public TextMeshProUGUI found1;
-	public TextMeshProUGUI ip1;
+    public TextMeshProUGUI ip1;
     public TextMeshProUGUI mdrop;
     public TextMeshProUGUI ack1;
     public TextMeshProUGUI req1;
@@ -38,6 +38,7 @@ public class broadcast1 : MonoBehaviour
     public GameObject recbox;
     public GameObject rec2box;
     public GameObject lookupbox;
+    public GameObject cube;
 
 
     // Start is called before the first frame update
@@ -50,7 +51,7 @@ public class broadcast1 : MonoBehaviour
         title4.enabled = false;
         found1.enabled = false;
         errortext.enabled = false;
-		ip1.enabled = false;
+        ip1.enabled = false;
         mdrop.enabled = false;
         ack1.enabled = false;
         req1.enabled = false;
@@ -78,7 +79,7 @@ public class broadcast1 : MonoBehaviour
         title3.GetComponent<TextMeshProUGUI>();
         title4.GetComponent<TextMeshProUGUI>();
         found1.GetComponent<TextMeshProUGUI>();
-		ip1.GetComponent<TextMeshProUGUI>();
+        ip1.GetComponent<TextMeshProUGUI>();
         mdrop.GetComponent<TextMeshProUGUI>();
         ack1.GetComponent<TextMeshProUGUI>();
         req1.GetComponent<TextMeshProUGUI>();
@@ -104,6 +105,7 @@ public class broadcast1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
+        cube.GetComponent<GameObject>();
     }
 
     public void broadcastClick()
@@ -140,8 +142,9 @@ public class broadcast1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
+        cube.GetComponent<GameObject>();
 
-        if (control.enabled == false)
+        if (cube.activeSelf == false)
         {
             if (title1.enabled == false && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
             {
@@ -159,12 +162,10 @@ public class broadcast1 : MonoBehaviour
                 errortext.enabled = true;
             }
         }
-
-        else
-        {
-
-        }
+        else { }
     }
+
+
 
     IEnumerator step1()
     {

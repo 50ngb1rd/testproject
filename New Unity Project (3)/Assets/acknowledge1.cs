@@ -37,6 +37,7 @@ public class acknowledge1 : MonoBehaviour
     public GameObject recbox;
     public GameObject rec2box;
     public GameObject lookupbox;
+    public GameObject cube;
 
 
     // Start is called before the first frame update
@@ -47,8 +48,8 @@ public class acknowledge1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		control.GetComponent<TextMeshProUGUI>();
-		errortext.GetComponent<TextMeshProUGUI>();
+        control.GetComponent<TextMeshProUGUI>();
+        errortext.GetComponent<TextMeshProUGUI>();
         title1.GetComponent<TextMeshProUGUI>();
         title2.GetComponent<TextMeshProUGUI>();
         title3.GetComponent<TextMeshProUGUI>();
@@ -79,6 +80,7 @@ public class acknowledge1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
+        cube.GetComponent<GameObject>();
     }
 
     public void ackClick()
@@ -115,8 +117,9 @@ public class acknowledge1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
+        cube.GetComponent<GameObject>();
 
-        if (control.enabled == false)
+        if (cube.activeSelf == false)
         {
             if (title1.enabled == false && title2.enabled == false && title3.enabled == true && title4.enabled == false && control.enabled == false)
             {
@@ -144,7 +147,7 @@ public class acknowledge1 : MonoBehaviour
 
     IEnumerator step4()
     {
-		control.enabled = true;
+        control.enabled = true;
         ack1.enabled = true;
         ackbox.GetComponent<Renderer>().enabled = true;
         yield return new WaitForSeconds(2);
@@ -175,7 +178,7 @@ public class acknowledge1 : MonoBehaviour
         mdropbox3.GetComponent<Renderer>().enabled = true;
         rec1.enabled = true;
         recbox.GetComponent<Renderer>().enabled = true;
-		control.enabled = false;
+        control.enabled = false;
         lookup.enabled = false;
         lookupbox.GetComponent<Renderer>().enabled = false;
     }
