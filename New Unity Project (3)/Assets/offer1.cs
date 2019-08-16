@@ -38,7 +38,7 @@ public class offer1 : MonoBehaviour
     public GameObject recbox;
     public GameObject rec2box;
     public GameObject lookupbox;
-    public GameObject cube;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,7 @@ public class offer1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
-        cube.GetComponent<GameObject>();
+        
     }
 
     public void offerClick()
@@ -117,10 +117,9 @@ public class offer1 : MonoBehaviour
         rec2box.GetComponent<GameObject>();
         lookup.GetComponent<TextMeshProUGUI>();
         lookupbox.GetComponent<GameObject>();
-        cube.GetComponent<GameObject>();
+        
 
-        if (cube.activeSelf == false)
-        {
+       
             if (title1.enabled == true && title2.enabled == false && title3.enabled == false && title4.enabled == false && control.enabled == false)
             {
                 title1.enabled = false;
@@ -142,7 +141,7 @@ public class offer1 : MonoBehaviour
             {
                 errortext.enabled = true;
             }
-        } else { }
+       
     }
 
 

@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/Test6.unity
     guid: 67d0b80423c507749aec86b1af49f99e
   - enabled: 0
-    path: Assets/UI Main menu.unity
-    guid: c7c99fc9630943c439e4a11febad1918
-  - enabled: 0
     path: Assets/TestLoad.unity
     guid: a47d327595982d846a93229c55b3a1fc
   - enabled: 0
@@ -53,9 +50,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/TestText.unity
     guid: d7443b4e099668f44b3ad76acd0fe496
-  - enabled: 1
-    path: Assets/Scenes/DHCP.unity
-    guid: dcc7621e3489b460f98da7d1f3b6f60b
   - enabled: 0
     path: Assets/GrabExperiment.unity
     guid: beac645e5b453484fb5dc4f6b0021a64
@@ -65,6 +59,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Oculus/SampleFramework/Usage/CustomHands.unity
     guid: a4f984fcee593d2418cc61f4a993d46d
+  - enabled: 1
+    path: Assets/UI Main menu.unity
+    guid: c7c99fc9630943c439e4a11febad1918
+  - enabled: 1
+    path: Assets/Tutorial.unity
+    guid: 8df6693711fefea469ddd70b9f81b0f1
+  - enabled: 1
+    path: Assets/ProductionlineDHCP.unity
+    guid: 150d30f90041bfd43be3e03172047e86
+  - enabled: 1
+    path: Assets/Scenes/DHCP.unity
+    guid: dcc7621e3489b460f98da7d1f3b6f60b
+  - enabled: 0
+    path: Assets/ProSuccess.unity
+    guid: ca4150ecc591c9d4aba97a2ef959e650
+  - enabled: 1
+    path: Assets/ProddSuccess.unity
+    guid: ee898c2d6b8fa0749b504ce2735aca4e
   - enabled: 0
     path: Assets/Oculus/SampleFramework/Usage/DistanceGrab.unity
     guid: 24f58b3f0ca02d44eaec7f50bca538f2

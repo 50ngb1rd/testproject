@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonInTest : MonoBehaviour, IPointerDownHandler
+public class ButtonInTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public bool shouldMove = false;
     public Transform endPoint;
     public float speed;
-    //public Transform oriPoint;
+    public Vector3 oriPoint;
     // Start is called before the first frame update
    
 
@@ -21,10 +21,10 @@ public class ButtonInTest : MonoBehaviour, IPointerDownHandler
 
             this.transform.position = Vector3.MoveTowards(this.transform.position, endPoint.position, speed * Time.deltaTime);
         }
-       // else if(shouldMove == false)
-        //{
-            //this.transform.position = Vector3.MoveTowards(this.transform.position, oriPoint.position, speed * Time.deltaTime);
-        //}
+       else if(shouldMove == false)
+        {
+            this.transform.position = Vector3.MoveTowards(this.transform.position, oriPoint, speed * Time.deltaTime);
+        }
         
     }
 
@@ -32,6 +32,12 @@ public class ButtonInTest : MonoBehaviour, IPointerDownHandler
     {
         shouldMove = true;
         
+        
+    }
+
+    public void OnPointerUp(PointerEventData data1)
+    {
+        shouldMove = false;
     }
 
    

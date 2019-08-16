@@ -6,6 +6,7 @@ using TMPro;
 public class PowerCoreBehaviour : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public TextMeshProUGUI otherText;
     
     public GameObject oldPowercore;
     public GameObject newPowercore;
@@ -13,12 +14,26 @@ public class PowerCoreBehaviour : MonoBehaviour
     public GameObject newMonitor;
     public GameObject newButton;
     public TextMeshProUGUI counterText;
+    public GameObject bigMonitor;
+    public GameObject bigOldmonitor;
     
     string text1 = "Access granted. Press position to align power core to slot.";
     string text2 = "Please insert power core into the machine.";
     string text3 = "Please pull lever to access power core.";
     string text4 = "Power core successfully inserted.";
     // Start is called before the first frame update
+
+       public void OnLastInsertClicked()
+    {
+        text.ForceMeshUpdate(true);
+        otherText.ForceMeshUpdate(true);
+        if(text.text== text4 && otherText.text == text4)
+        {
+            bigMonitor.SetActive(true);
+            bigOldmonitor.SetActive(false);
+
+        }
+    }
 
 
     public void OnDLAnswered()

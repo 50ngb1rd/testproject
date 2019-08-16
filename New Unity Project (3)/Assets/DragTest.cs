@@ -8,6 +8,7 @@ public class DragTest : MonoBehaviour, IDragHandler
     public Vector3 worldPos;
     public Camera cam;
     public RaycastResult r1;
+    public float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class DragTest : MonoBehaviour, IDragHandler
         Vector2 pos = data1.position;
          r1 = data1.pointerCurrentRaycast;
         GameObject g1 = r1.gameObject;
-        worldPos = cam.ScreenToWorldPoint(new Vector3(pos.x, pos.y, 2.0f));
+        worldPos = cam.ScreenToWorldPoint(new Vector3(pos.x, pos.y, offset));
             
 
         }
